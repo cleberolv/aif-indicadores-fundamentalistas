@@ -1,0 +1,76 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language:pt"
+      }
+    ],
+    "line": 3,
+    "elements": [
+      {
+        "line": 9,
+        "name": "Buscar Itaúsa - ITSA4",
+        "description": "",
+        "id": "buscar-ação-por-ticker;buscar-itaúsa---itsa4",
+        "type": "scenario",
+        "keyword": "Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 4647034408,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "que acesso a pagina do site fundamentus",
+            "match": {
+              "location": "AccessStepsDefinitions.acessarPagina()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 337991218,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "realizo a busca por \"ITSA4\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ITSA4",
+                  "offset": 21
+                }
+              ],
+              "location": "AccessStepsDefinitions.realizoBusca(String)"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 1664616890,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "valido a busca foi efetuada com exito",
+            "match": {
+              "location": "AccessStepsDefinitions.validoABuscaFoiEfetuadaComExito()"
+            },
+            "keyword": "Então "
+          }
+        ]
+      }
+    ],
+    "name": "Buscar ação por Ticker",
+    "description": "Eu como um investidor \nQuero acessar o site fundamentus \nE realizar uma buscar por ticker \nEntão visualizar os fundamentos do ativo",
+    "id": "buscar-ação-por-ticker",
+    "keyword": "Funcionalidade",
+    "uri": "src/test/resources/features/access.feature",
+    "tags": [
+      {
+        "line": 2,
+        "name": "@Tickers"
+      }
+    ]
+  }
+]
