@@ -45,7 +45,7 @@ formatter.match({
   "location": "AccessStepsDefinitions.acessarPagina()"
 });
 formatter.result({
-  "duration": 4647034408,
+  "duration": 47085953182,
   "status": "passed"
 });
 formatter.match({
@@ -58,14 +58,22 @@ formatter.match({
   "location": "AccessStepsDefinitions.realizoBusca(String)"
 });
 formatter.result({
-  "duration": 337991218,
+  "duration": 269010516,
   "status": "passed"
 });
 formatter.match({
   "location": "AccessStepsDefinitions.validoABuscaFoiEfetuadaComExito()"
 });
 formatter.result({
-  "duration": 1664616890,
+  "duration": 1939279070,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 2974696024,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 1033730225,
   "status": "passed"
 });
 });

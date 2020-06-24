@@ -13,12 +13,32 @@
         "name": "Buscar Itaúsa - ITSA4",
         "description": "",
         "id": "buscar-ação-por-ticker;buscar-itaúsa---itsa4",
+        "after": [
+          {
+            "result": {
+              "duration": 2974696024,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AccessStepsDefinitions.screenshot(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 1033730225,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AccessStepsDefinitions.killDriver()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Cenário",
         "steps": [
           {
             "result": {
-              "duration": 4647034408,
+              "duration": 47085953182,
               "status": "passed"
             },
             "line": 10,
@@ -30,7 +50,7 @@
           },
           {
             "result": {
-              "duration": 337991218,
+              "duration": 269010516,
               "status": "passed"
             },
             "line": 11,
@@ -48,7 +68,7 @@
           },
           {
             "result": {
-              "duration": 1664616890,
+              "duration": 1939279070,
               "status": "passed"
             },
             "line": 12,
