@@ -4,9 +4,12 @@ import org.openqa.selenium.By;
 
 import application.aif.core.BasePage;
 
-public class FundamentusPage extends BasePage{
+public class ValuationPage extends BasePage{
 	
 	//Stock
+	
+	//String tickers 		= 			"By.xpath(\"//table[1]/tbody/tr[1]/td[2]/span\")";
+	//String prices			=			"By.xpath(\"//table[1]/tbody/tr[1]/td[4]/span\")";
 	
 	By ticker				=			By.xpath("//table[1]/tbody/tr[1]/td[2]/span");
 	By sector				=			By.xpath("//table[1]/tbody/tr[4]/td[2]/span");
@@ -42,4 +45,13 @@ public class FundamentusPage extends BasePage{
 	By indEBIT3m			=			By.xpath("//table[5]/tbody/tr[4]/td[4]/span");
 	By netRevenue3m			=			By.xpath("//table[5]/tbody/tr[5]/td[4]/span");
 	
+	public String checkTicker() {
+		return getText(ticker);
+	}
+	
+	public String checkPrice() {
+		return getText(price);
+	}
+	
 }
+
