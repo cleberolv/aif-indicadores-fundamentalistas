@@ -50,8 +50,13 @@ public class ValuationPage extends BasePage{
 	}
 	
 	public String checkPrice() {
-		return getText(price);
+		String value = getText(price);
+		if (!value.matches(".*[a-z].*")) {
+			if (value.contains(",")) {
+				value = value.replace(",", ".");
+			}
+		}
+		return value;
 	}
-	
 }
 

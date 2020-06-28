@@ -29,13 +29,8 @@ public class ValuationStepsDefinitions {
 		String tickerName = valuation.checkTicker();
 		System.out.println("\nTikcer: " + tickerName);
 
-		String price = valuation.checkPrice();
-		if (!price.matches(".*[a-z].*")) {
-			if (price.contains(",")) {
-				price = price.replace(",", ".");
-			}
-		}
-		float value = Float.parseFloat(price);
+		String valueTicker = valuation.checkPrice();
+		float value = Float.parseFloat(valueTicker);
 		System.out.println("Actual price: " + value);
 	}
 

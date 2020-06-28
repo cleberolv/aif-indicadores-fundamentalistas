@@ -49,7 +49,7 @@ public class AccessStepsDefinitions{
 			for (int i=0; i<=100; i++) { 
 				System.out.printf("-");
 			}
-			System.out.println("Verify screenshoots");
+			System.out.println("\nVerify screenshoots");
 		}
 	}
 	
