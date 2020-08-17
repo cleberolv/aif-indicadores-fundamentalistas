@@ -25,19 +25,16 @@ public class ValuationStepsDefinitions {
 
 	@Given("^validar os indicadores informados$")
 	public void validar_os_indicadores_informados() throws Throwable {
-
 		String tickerName = valuation.checkTicker();
 		System.out.println("\nTikcer: " + tickerName);
 
 		String valueTicker = valuation.checkPrice();
-		float value = Float.parseFloat(valueTicker);
-		System.out.println("Actual price: " + value);
+		System.out.println("Actual price: " + valueTicker);
 	}
 
 	@When("^realizar um comparativo com os parametros definidos$")
-	public void realizar_um_comparativo_com_os_parametros_definidos() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void realizar_um_comparativo_com_os_parametros_definidos() {
+		valuation.validatePL();
 	}
 
 	@Then("^eu verifico se o ativo possui margem para uma melhor analise$")

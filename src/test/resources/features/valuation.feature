@@ -11,6 +11,6 @@ Feature: Validar indicadores fundamentalistas da ação
 
   @Valuation
   Scenario: Realizar Valuation
-    Then validar os indicadores informados
- #  When realizar um comparativo com os parametros definidos
+    And validar os indicadores informados
+ 	  Then realizar um comparativo com os parametros definidos
  #  Then eu verifico se o ativo possui margem para uma melhor analise

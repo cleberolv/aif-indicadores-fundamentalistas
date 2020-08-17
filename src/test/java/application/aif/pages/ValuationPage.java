@@ -6,11 +6,10 @@ import application.aif.core.BasePage;
 
 public class ValuationPage extends BasePage{
 	
-	//Stock
-	
-	//String tickers 		= 			"By.xpath(\"//table[1]/tbody/tr[1]/td[2]/span\")";
 	//String prices			=			"By.xpath(\"//table[1]/tbody/tr[1]/td[4]/span\")";
 	
+	/*	 							*** FIELD STOCKS *** 							*/
+
 	By ticker				=			By.xpath("//table[1]/tbody/tr[1]/td[2]/span");
 	By sector				=			By.xpath("//table[1]/tbody/tr[4]/td[2]/span");
 	By subSector			=			By.xpath("//table[1]/tbody/tr[5]/td[2]/span");
@@ -18,8 +17,8 @@ public class ValuationPage extends BasePage{
 	By min52w				=			By.xpath("//table[1]/tbody/tr[3]/td[4]/span");
 	By max52w				=			By.xpath("//table[1]/tbody/tr[4]/td[4]/span");
 	
-	//Indicators
-	
+	/*	 							*** FIELD INDICATORS *** 						*/
+
 	By indPL				=			By.xpath("//table[3]/tbody/tr[2]/td[4]/span");
 	By indPVP				=			By.xpath("//table[3]/tbody/tr[3]/td[4]/span");
 	By indDY				=			By.xpath("//table[3]/tbody/tr[9]/td[4]/span");
@@ -30,13 +29,13 @@ public class ValuationPage extends BasePage{
 	By indROE				=			By.xpath("//table[3]/tbody/tr[9]/td[6]/span");
 	By liquidityRatio		=			By.xpath("//table[3]/tbody/tr[10]/td[6]/span");
 
-	//Debt and Patrimony
+	/*	 							*** DEBT AND PARTRIMONY *** 					*/
 	
 	By grossDebts			=			By.xpath("//table[3]/tbody/tr[2]/td[4]/span");
 	By netDebt				=			By.xpath("//table[3]/tbody/tr[3]/td[4]/span");
 	By netWorth				=			By.xpath("//table[3]/tbody/tr[4]/td[4]/span");
 	
-	//Profits
+	/*	 								*** PROFITS *** 							*/
 	
 	By netProfit			=			By.xpath("//table[5]/tbody/tr[3]/td[2]/span");
 	By indEBIT				=			By.xpath("//table[5]/tbody/tr[4]/td[2]/span");
@@ -50,13 +49,23 @@ public class ValuationPage extends BasePage{
 	}
 	
 	public String checkPrice() {
-		String value = getText(price);
-		if (!value.matches(".*[a-z].*")) {
-			if (value.contains(",")) {
-				value = value.replace(",", ".");
-			}
+		replaceDecimals(price);
+		return getText(price);
+	}
+	
+										/* STOCK RULES VALIDATIONS */
+	
+	//Change to boolean 
+	public void validatePL() {
+		String indicatorPL = replaceDecimals(indPL);
+		float indPL = Float.parseFloat(indicatorPL);
+		
+		if (indPL < 15) {
+			System.out.println("\nPL = " + indicatorPL + " < 15 - PL Ok");
 		}
-		return value;
+		else {
+			System.out.println("\nPL = " + indicatorPL + " > 15 - PL NOK");
+		}
 	}
 }
 

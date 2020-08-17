@@ -22,4 +22,13 @@ public class BasePage extends BaseTest{
 		getDriver().findElement(by).sendKeys(texto);
 	}
 	
+	public String replaceDecimals(By indicator) {
+		String value = getText(indicator);
+		if (!value.matches(".*[a-z].*")) {
+			if (value.contains(",")) {
+				value = value.replace(",", ".");
+			}
+		}
+		return value;
+	}
 }
